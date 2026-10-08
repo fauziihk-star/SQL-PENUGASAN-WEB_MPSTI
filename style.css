@@ -206,6 +206,65 @@ body {
     color: #ff76a8;
 }
 
+.modal-open {
+    overflow: hidden;
+}
+
+.certificate-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.82);
+}
+
+.certificate-modal[hidden] {
+    display: none;
+}
+
+.certificate-modal-content {
+    position: relative;
+    width: min(900px, 100%);
+    max-height: 95vh;
+    overflow: auto;
+    padding: 2.5rem 1.5rem 1.5rem;
+    background: #17152f;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-card);
+    text-align: center;
+}
+
+.certificate-modal-content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.certificate-modal-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    border: 0;
+    background: transparent;
+    color: var(--text-white);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
 .social-links {
     margin-top: 1.2rem;
     display: flex;
