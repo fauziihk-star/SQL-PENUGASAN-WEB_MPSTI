@@ -27,12 +27,12 @@
             <!-- Copy dari <div class="card"> sampai </div> di bawah ini, lalu paste di bawahnya. -->
             <!-- Ganti gambar, judul, deskripsi, dan link sesuai kebutuhan. -->
             <div class="card">
-                <img src="gambar/foto mpp1.JPG" alt="Gambar Project 1">
+                <img src="gambar/foto mpp1.JPG" alt="Foto MP2STI">
                 <h3>Foto MP2STI</h3>
                 <p>Foto bersama kating pada saat kegiatan MP2STI</p>
-                <a href="gambar/foto mpp1.JPG" class="card-link certificate-link" data-title="Foto Bersama">Lihat Detail</a>
+                <!-- Tambahkan class single-lightbox-link atau gunakan fungsi khusus -->
+                <a href="#" class="card-link single-link" data-img="gambar/foto mpp1.JPG" data-title="Foto MP2STI">Lihat Detail</a>
             </div>
-
            
             <!-- SELESAI CARD PROJECT -->
 
@@ -50,9 +50,13 @@
             <div class="card">
                 <img src="gambar/Sertif Fauzii.png" alt="Gambar Sertifikat 1">
                 <h3>Sertifikat Fauzii</h3>
-                <p><strong>Penyelenggara:</strong> Dicoding Indonesia</p>
+                <p><strong>Penyelenggara:</strong> Dicoding Indonesia, cursa</p>
                 <p><strong>Tahun:</strong> 3 Sep 2026</p>
-                <a href="gambar/Sertif Fauzii.png" class="card-link certificate-link" data-title="Sertifikat Mulai Pemrograman dengan">Lihat Sertifikat</a>
+                <a href="#" class="card-link certificate-link" 
+                    data-title="Kumpulan Sertifikat Achmad Fauzii" 
+                    data-certificates="gambar/Sertif Fauzii.png, gambar/fauzii2.png, gambar/fauzii3.png, gambar/fauzii4.png, gambar/fauzii5.png, gambar/fauzii6.png">
+                    Lihat Sertifikat
+                </a>
             </div>
 
             <div class="card">
@@ -107,14 +111,29 @@
         </div>
     </section>
 
-    <div class="certificate-modal" id="certificate-modal" role="dialog" aria-modal="true" aria-labelledby="certificate-modal-title" hidden>
-        <div class="certificate-modal-content">
-            <button class="modal-close" type="button" aria-label="Tutup">&times;</button>
-            <h2 id="certificate-modal-title"></h2>
-            <img id="certificate-modal-image" src="" alt="Isi sertifikat">
+    <script src="script.js"></script>
+
+    <div id="certificateModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Judul Sertifikat</h2>
+            
+            <div class="modal-body-slider">
+                <!-- Tombol Navigasi Kiri -->
+                <button id="prevBtn" class="slider-btn">&#10094;</button>
+                
+                <!-- Tempat Gambar Sertifikat Berganti -->
+                <div class="image-container">
+                    <img id="modalImage" src="" alt="Sertifikat">
+                </div>
+                
+                <!-- Tombol Navigasi Kanan -->
+                <button id="nextBtn" class="slider-btn">&#10095;</button>
+            </div>
+            
+            <!-- Indikator Urutan Sertifikat (Contoh: 1 dari 6) -->
+            <p id="imageCounter" style="text-align: center; margin-top: 10px; color: #aaa;"></p>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
